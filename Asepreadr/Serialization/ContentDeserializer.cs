@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Asepreadr.Serialization
 {
-    internal class ContentDeserializer : IContentDeserializer
+    public class ContentDeserializer : IContentDeserializer
     {
         public T Get<T>(string path)
         {
