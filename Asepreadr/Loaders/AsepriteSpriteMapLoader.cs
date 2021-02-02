@@ -9,7 +9,7 @@ namespace Asepreadr.Loaders
     public class AsepriteSpriteMapLoader : IContentLoader<AsepriteSpriteMap>
     {
         private readonly IContentDeserializer _contentDeserializer;
-        private ContentManager _contentManager;
+        private readonly ContentManager _contentManager;
 
         public AsepriteSpriteMapLoader(ContentManager contentManager, IContentDeserializer contentDeserializer)
         {
