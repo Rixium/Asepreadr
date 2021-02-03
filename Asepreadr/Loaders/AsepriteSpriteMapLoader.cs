@@ -1,19 +1,18 @@
 ﻿using System.IO;
 using Asepreadr.Aseprite;
 using Asepreadr.Serialization;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Asepreadr.Loaders
 {
     public class AsepriteSpriteMapLoader : IContentLoader<AsepriteSpriteMap>
     {
+        private readonly IContentChest _contentChest;
         private readonly IContentDeserializer _contentDeserializer;
-        private readonly ContentManager _contentManager;
 
-        public AsepriteSpriteMapLoader(ContentManager contentManager, IContentDeserializer contentDeserializer)
+        public AsepriteSpriteMapLoader(IContentChest contentChest, IContentDeserializer contentDeserializer)
         {
-            _contentManager = contentManager;
+            _contentChest = contentChest;
             _contentDeserializer = contentDeserializer;
         }
 
@@ -24,7 +23,7 @@ namespace Asepreadr.Loaders
             var fullPath = Path.Combine(Path.GetDirectoryName(path) ?? "",
                 Path.GetFileNameWithoutExtension(path));
 
-            var image = _contentManager.Load<Texture2D>(fullPath);
+            var image = _contentChest.Get<Texture2D>(fullPath);
 
             return new AsepriteSpriteMap(name, image, asepriteData.Meta.Slices);
         }
