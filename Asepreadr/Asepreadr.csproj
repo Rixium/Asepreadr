@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <PackageVersion>0.0.3</PackageVersion>
+        <PackageVersion>0.0.4</PackageVersion>
         <Title>Asepreadr</Title>
         <Authors>YetiFace</Authors>
         <RepositoryUrl>https://github.com/Rixium/Asepreadr</RepositoryUrl>
@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     </ItemGroup>
     
     <PropertyGroup>

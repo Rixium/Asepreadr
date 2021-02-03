@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace Asepreadr.Serialization
 {
@@ -8,7 +8,7 @@ namespace Asepreadr.Serialization
         public T Get<T>(string path)
         {
             var text = File.ReadAllText(path);
-            var data = JsonSerializer.Deserialize<T>(text);
+            var data = JsonConvert.DeserializeObject<T>(text);
             return data;
         }
     }
